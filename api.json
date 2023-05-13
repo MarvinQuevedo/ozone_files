@@ -1,1615 +1,1612 @@
 {
-    "swaggerDoc": {
-        "openapi": "3.0.0",
-        "info": {
-            "title": "Spacescan API's",
-            "version": "0.1.0"
-        },
-        "paths": {
-            "/address/balance/{address}": {
-                "get": {
-                    "tags": [
-                        "Address"
-                    ],
-                    "description": "Get the XCH, NFT and CAT balances of an address!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns XCH, NFT and CAT balances of an address!"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "address",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "type",
-                            "schema": {
-                                "type": "string",
-                                "default": "xch"
-                            },
-                            "description": "Possible values are All or xch,cat,nft"
-                        },
-                        {
-                            "in": "query",
-                            "name": "min_time",
-                            "schema": {
-                                "type": "date"
-                            },
-                            "description": "YYYY-MM-DD"
-                        },
-                        {
-                            "in": "query",
-                            "name": "max_time",
-                            "schema": {
-                                "type": "date"
-                            },
-                            "description": "YYYY-MM-DD"
-                        },
-                        {
-                            "in": "query",
-                            "name": "min_block",
-                            "schema": {
-                                "type": "number"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "max_block",
-                            "schema": {
-                                "type": "number"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/address/transactions/{address}": {
-                "get": {
-                    "tags": [
-                        "Address"
-                    ],
-                    "description": "Get the XCH, NFT and CAT transactions of an address!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns XCH, NFT and CAT transactions of an address!"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "address",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "type",
-                            "schema": {
-                                "type": "string",
-                                "default": "xch"
-                            },
-                            "description": "Possible values are All or xch,cat,nft"
-                        },
-                        {
-                            "in": "query",
-                            "name": "min_block",
-                            "schema": {
-                                "type": "number"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "max_block",
-                            "schema": {
-                                "type": "number"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/address/resolve/{name}": {
-                "get": {
-                    "tags": [
-                        "Address"
-                    ],
-                    "description": "Get XCH Address and expiry details for Name!",
-                    "responses": {
-                        "200": {
-                            "description": "Get XCH Address and expiry details for Name!"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "name",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/block/info/{block}": {
-                "get": {
-                    "tags": [
-                        "Blockchain"
-                    ],
-                    "description": "Get the block summary!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns block summary!"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "block",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/cat/info/{cat_id}": {
-                "get": {
-                    "tags": [
-                        "CAT"
-                    ],
-                    "description": "Welcome to swagger-jsdoc!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns CAT Information."
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "cat_id",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/cat/holders/{cat_id}": {
-                "get": {
-                    "tags": [
-                        "CAT"
-                    ],
-                    "description": "Welcome to swagger-jsdoc!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns CAT Information."
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "cat_id",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/cat/transactions/{cat_id}": {
-                "get": {
-                    "tags": [
-                        "CAT"
-                    ],
-                    "description": "Welcome to swagger-jsdoc!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns CAT Information."
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "cat_id",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/coin/info/{coin_id}": {
-                "get": {
-                    "tags": [
-                        "Blockchain"
-                    ],
-                    "description": "Get the coin summary!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns coin summary!"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "coin_id",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/did/info/{did}": {
-                "get": {
-                    "tags": [
-                        "DID"
-                    ],
-                    "description": "Get the did info by giving did/did_hex!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns did info for the did!"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "did",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/did/basic_info/{did}": {
-                "get": {
-                    "tags": [
-                        "DID"
-                    ],
-                    "description": "Get the did info by giving did/did_hex!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns did info for the did!"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "did",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/did/basic_info": {
-                "post": {
-                    "tags": [
-                        "DID"
-                    ],
-                    "description": "Get the basic DID profiles for list of dids!",
-                    "responses": {
-                        "200": {
-                            "description": "Get the basic DID profiles for list of dids!"
-                        }
-                    },
-                    "requestBody": {
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Spacescan API's",
+        "version": "0.1.0"
+    },
+    "paths": {
+        "/address/balance/{address}": {
+            "get": {
+                "tags": [
+                    "Address"
+                ],
+                "description": "Get the XCH, NFT and CAT balances of an address!",
+                "responses": {
+                    "200": {
+                        "description": "Returns XCH, NFT and CAT balances of an address!"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "address",
                         "required": true,
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "dids": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string"
-                                            }
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "type",
+                        "schema": {
+                            "type": "string",
+                            "default": "xch"
+                        },
+                        "description": "Possible values are All or xch,cat,nft"
+                    },
+                    {
+                        "in": "query",
+                        "name": "min_time",
+                        "schema": {
+                            "type": "date"
+                        },
+                        "description": "YYYY-MM-DD"
+                    },
+                    {
+                        "in": "query",
+                        "name": "max_time",
+                        "schema": {
+                            "type": "date"
+                        },
+                        "description": "YYYY-MM-DD"
+                    },
+                    {
+                        "in": "query",
+                        "name": "min_block",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "max_block",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ]
+            }
+        },
+        "/address/transactions/{address}": {
+            "get": {
+                "tags": [
+                    "Address"
+                ],
+                "description": "Get the XCH, NFT and CAT transactions of an address!",
+                "responses": {
+                    "200": {
+                        "description": "Returns XCH, NFT and CAT transactions of an address!"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "address",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "type",
+                        "schema": {
+                            "type": "string",
+                            "default": "xch"
+                        },
+                        "description": "Possible values are All or xch,cat,nft"
+                    },
+                    {
+                        "in": "query",
+                        "name": "min_block",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "max_block",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ]
+            }
+        },
+        "/address/resolve/{name}": {
+            "get": {
+                "tags": [
+                    "Address"
+                ],
+                "description": "Get XCH Address and expiry details for Name!",
+                "responses": {
+                    "200": {
+                        "description": "Get XCH Address and expiry details for Name!"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/block/info/{block}": {
+            "get": {
+                "tags": [
+                    "Blockchain"
+                ],
+                "description": "Get the block summary!",
+                "responses": {
+                    "200": {
+                        "description": "Returns block summary!"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "block",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/cat/info/{cat_id}": {
+            "get": {
+                "tags": [
+                    "CAT"
+                ],
+                "description": "Welcome to swagger-jsdoc!",
+                "responses": {
+                    "200": {
+                        "description": "Returns CAT Information."
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "cat_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/cat/holders/{cat_id}": {
+            "get": {
+                "tags": [
+                    "CAT"
+                ],
+                "description": "Welcome to swagger-jsdoc!",
+                "responses": {
+                    "200": {
+                        "description": "Returns CAT Information."
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "cat_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/cat/transactions/{cat_id}": {
+            "get": {
+                "tags": [
+                    "CAT"
+                ],
+                "description": "Welcome to swagger-jsdoc!",
+                "responses": {
+                    "200": {
+                        "description": "Returns CAT Information."
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "cat_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/coin/info/{coin_id}": {
+            "get": {
+                "tags": [
+                    "Blockchain"
+                ],
+                "description": "Get the coin summary!",
+                "responses": {
+                    "200": {
+                        "description": "Returns coin summary!"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "coin_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/did/info/{did}": {
+            "get": {
+                "tags": [
+                    "DID"
+                ],
+                "description": "Get the did info by giving did/did_hex!",
+                "responses": {
+                    "200": {
+                        "description": "Returns did info for the did!"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "did",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/did/basic_info/{did}": {
+            "get": {
+                "tags": [
+                    "DID"
+                ],
+                "description": "Get the did info by giving did/did_hex!",
+                "responses": {
+                    "200": {
+                        "description": "Returns did info for the did!"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "did",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/did/basic_info": {
+            "post": {
+                "tags": [
+                    "DID"
+                ],
+                "description": "Get the basic DID profiles for list of dids!",
+                "responses": {
+                    "200": {
+                        "description": "Get the basic DID profiles for list of dids!"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "dids": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
                                         }
-                                    },
-                                    "required": [
-                                        "dids"
-                                    ]
-                                }
+                                    }
+                                },
+                                "required": [
+                                    "dids"
+                                ]
                             }
                         }
                     }
                 }
-            },
-            "/did/nfts/{did}": {
-                "get": {
-                    "tags": [
-                        "DID"
-                    ],
-                    "description": "Get the nfts info by giving did/did_hex!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns nft info for the did!"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "did",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "type",
-                            "required": true,
-                            "schema": {
-                                "type": "string",
-                                "default": "owned"
-                            },
-                            "description": "Possible values are all/created/owned"
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "page",
-                            "required": false,
-                            "schema": {
-                                "type": "number",
-                                "default": 1
-                            },
-                            "description": "Each page contains 40 entries"
-                        }
-                    ]
-                }
-            },
-            "/did/collections/{did}": {
-                "get": {
-                    "tags": [
-                        "DID"
-                    ],
-                    "description": "Get the collections info by giving did/did_hex!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns collections info for the did!"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "did",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "page",
-                            "required": false,
-                            "schema": {
-                                "type": "number",
-                                "default": 1
-                            },
-                            "description": "Each page contains 40 entries"
-                        }
-                    ]
-                }
-            },
-            "/did/verify/{did}": {
-                "get": {
-                    "tags": [
-                        "DID"
-                    ],
-                    "description": "find the collection/nft is owned by the did/did_hex!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns the collection/nft id given is present!"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "did",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "item",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            },
-                            "description": "item can be either collection id or nft id"
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/mempool/{type}": {
-                "get": {
-                    "tags": [
-                        "Mempool"
-                    ],
-                    "description": "Welcome to swagger-jsdoc!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns minfee."
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "type",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/collection/info/{col_id}": {
-                "get": {
-                    "tags": [
-                        "NFT"
-                    ],
-                    "description": "Get the information of the NFT Collection",
-                    "responses": {
-                        "200": {
-                            "description": "Returns Collection Information"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "col_id",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/collection/created-by/{creator_did}": {
-                "get": {
-                    "tags": [
-                        "NFT"
-                    ],
-                    "description": "Get the lists of the NFT Collection",
-                    "responses": {
-                        "200": {
-                            "description": "Returns Collection lists"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "creator_did",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "skip_cache",
-                            "schema": {
-                                "type": "boolean",
-                                "default": false
-                            }
-                        }
-                    ]
-                }
-            },
-            "/collection/nfts/{col_id}": {
-                "get": {
-                    "tags": [
-                        "NFT"
-                    ],
-                    "description": "Get the information of the NFT Collection",
-                    "responses": {
-                        "200": {
-                            "description": "Returns All NFT's from the Collection"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "col_id",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/collection/traits/{col_id}": {
-                "get": {
-                    "tags": [
-                        "NFT"
-                    ],
-                    "description": "Get the Traits of the NFT Collection",
-                    "responses": {
-                        "200": {
-                            "description": "Returns Collection Traits"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "col_id",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/nft/info/{nft_id}": {
-                "get": {
-                    "tags": [
-                        "NFT"
-                    ],
-                    "description": "Get the information of the NFT",
-                    "responses": {
-                        "200": {
-                            "description": "Returns NFT information"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "nft_id",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "includeActivities",
-                            "schema": {
-                                "type": "boolean",
-                                "default": false
-                            }
-                        }
-                    ]
-                }
-            },
-            "/nft/transactions/{nft_id}": {
-                "get": {
-                    "tags": [
-                        "NFT"
-                    ],
-                    "description": "Get the transaction details of the NFT",
-                    "responses": {
-                        "200": {
-                            "description": "Returns NFT transactions"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "nft_id",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/nft/stats": {
-                "get": {
-                    "tags": [
-                        "NFT"
-                    ],
-                    "description": "Get the stats of the NFT",
-                    "responses": {
-                        "200": {
-                            "description": "Returns NFT stats informations"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/nft/ranks/topBasic": {
-                "get": {
-                    "tags": [
-                        "NFT"
-                    ],
-                    "description": "Get the ranks of the Top NFT",
-                    "responses": {
-                        "200": {
-                            "description": "Returns NFT ranks informations"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "timeperiod",
-                            "schema": {
-                                "type": "string",
-                                "default": "1h"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "page",
-                            "schema": {
-                                "type": "number",
-                                "default": 1
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "count",
-                            "schema": {
-                                "type": "number",
-                                "default": 10
-                            }
-                        }
-                    ]
-                }
-            },
-            "/nft/ranks/trendBasic": {
-                "get": {
-                    "tags": [
-                        "NFT"
-                    ],
-                    "description": "Get the ranks of the NFT Trend",
-                    "responses": {
-                        "200": {
-                            "description": "Returns NFT ranks informations"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "timeperiod",
-                            "schema": {
-                                "type": "string",
-                                "default": "1h"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "page",
-                            "schema": {
-                                "type": "number",
-                                "default": 1
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "count",
-                            "schema": {
-                                "type": "number",
-                                "default": 10
-                            }
-                        }
-                    ]
-                }
-            },
-            "/nft/ranks/topFull": {
-                "get": {
-                    "tags": [
-                        "NFT"
-                    ],
-                    "description": "Get the ranks of the Top NFT",
-                    "responses": {
-                        "200": {
-                            "description": "Returns NFT ranks informations"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "timeperiod",
-                            "schema": {
-                                "type": "string",
-                                "default": "1h"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "page",
-                            "schema": {
-                                "type": "number",
-                                "default": 1
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "count",
-                            "schema": {
-                                "type": "number",
-                                "default": 10
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "verifiedOnly",
-                            "schema": {
-                                "type": "boolean",
-                                "default": true
-                            }
-                        }
-                    ]
-                }
-            },
-            "/nft/ranks/trendFull": {
-                "get": {
-                    "tags": [
-                        "NFT"
-                    ],
-                    "description": "Get the ranks of the NFT Trend",
-                    "responses": {
-                        "200": {
-                            "description": "Returns NFT ranks informations"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "timeperiod",
-                            "schema": {
-                                "type": "string",
-                                "default": "1h"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "page",
-                            "schema": {
-                                "type": "number",
-                                "default": 1
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "count",
-                            "schema": {
-                                "type": "number",
-                                "default": 10
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "verifiedOnly",
-                            "schema": {
-                                "type": "boolean",
-                                "default": true
-                            }
-                        }
-                    ]
-                }
-            },
-            "/offer/lists": {
-                "get": {
-                    "tags": [
-                        "Offer"
-                    ],
-                    "description": "Welcome to swagger-jsdoc!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns Offer lists."
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "query",
-                            "name": "status",
-                            "required": false,
-                            "schema": {
-                                "type": "number"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "count",
-                            "required": false,
-                            "schema": {
-                                "type": "number"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "page",
-                            "required": false,
-                            "schema": {
-                                "type": "number"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "type",
-                            "required": false,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "detail",
-                            "required": false,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "filter",
-                            "required": false,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/offer/{offer_id}": {
-                "get": {
-                    "tags": [
-                        "Offer"
-                    ],
-                    "description": "Welcome to swagger-jsdoc!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns Offer Details."
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "offer_id",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/stats/price/{cur}": {
-                "get": {
-                    "tags": [
-                        "Stats"
-                    ],
-                    "description": "Welcome to swagger-jsdoc!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns total supply of xch."
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "cur",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/stats/total-supply": {
-                "get": {
-                    "tags": [
-                        "Stats"
-                    ],
-                    "description": "Welcome to swagger-jsdoc!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns total supply of xch."
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
-            },
-            "/stats/netspace/{metrics}": {
-                "get": {
-                    "tags": [
-                        "Stats"
-                    ],
-                    "description": "Welcome to swagger-jsdoc!",
-                    "responses": {
-                        "200": {
-                            "description": "Returns total supply of xch."
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "in": "path",
-                            "name": "metrics",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "authkey",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "version",
-                            "schema": {
-                                "type": "float",
-                                "default": "0.1.0"
-                            }
-                        },
-                        {
-                            "in": "query",
-                            "name": "network",
-                            "schema": {
-                                "type": "string",
-                                "default": "mainnet"
-                            }
-                        }
-                    ]
-                }
             }
         },
-        "components": {},
-        "tags": []
+        "/did/nfts/{did}": {
+            "get": {
+                "tags": [
+                    "DID"
+                ],
+                "description": "Get the nfts info by giving did/did_hex!",
+                "responses": {
+                    "200": {
+                        "description": "Returns nft info for the did!"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "did",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "type",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "owned"
+                        },
+                        "description": "Possible values are all/created/owned"
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "default": 1
+                        },
+                        "description": "Each page contains 40 entries"
+                    }
+                ]
+            }
+        },
+        "/did/collections/{did}": {
+            "get": {
+                "tags": [
+                    "DID"
+                ],
+                "description": "Get the collections info by giving did/did_hex!",
+                "responses": {
+                    "200": {
+                        "description": "Returns collections info for the did!"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "did",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "default": 1
+                        },
+                        "description": "Each page contains 40 entries"
+                    }
+                ]
+            }
+        },
+        "/did/verify/{did}": {
+            "get": {
+                "tags": [
+                    "DID"
+                ],
+                "description": "find the collection/nft is owned by the did/did_hex!",
+                "responses": {
+                    "200": {
+                        "description": "Returns the collection/nft id given is present!"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "did",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "item",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "item can be either collection id or nft id"
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/mempool/{type}": {
+            "get": {
+                "tags": [
+                    "Mempool"
+                ],
+                "description": "Welcome to swagger-jsdoc!",
+                "responses": {
+                    "200": {
+                        "description": "Returns minfee."
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/collection/info/{col_id}": {
+            "get": {
+                "tags": [
+                    "NFT"
+                ],
+                "description": "Get the information of the NFT Collection",
+                "responses": {
+                    "200": {
+                        "description": "Returns Collection Information"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "col_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/collection/created-by/{creator_did}": {
+            "get": {
+                "tags": [
+                    "NFT"
+                ],
+                "description": "Get the lists of the NFT Collection",
+                "responses": {
+                    "200": {
+                        "description": "Returns Collection lists"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "creator_did",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "skip_cache",
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ]
+            }
+        },
+        "/collection/nfts/{col_id}": {
+            "get": {
+                "tags": [
+                    "NFT"
+                ],
+                "description": "Get the information of the NFT Collection",
+                "responses": {
+                    "200": {
+                        "description": "Returns All NFT's from the Collection"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "col_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/collection/traits/{col_id}": {
+            "get": {
+                "tags": [
+                    "NFT"
+                ],
+                "description": "Get the Traits of the NFT Collection",
+                "responses": {
+                    "200": {
+                        "description": "Returns Collection Traits"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "col_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/nft/info/{nft_id}": {
+            "get": {
+                "tags": [
+                    "NFT"
+                ],
+                "description": "Get the information of the NFT",
+                "responses": {
+                    "200": {
+                        "description": "Returns NFT information"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "nft_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "includeActivities",
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ]
+            }
+        },
+        "/nft/transactions/{nft_id}": {
+            "get": {
+                "tags": [
+                    "NFT"
+                ],
+                "description": "Get the transaction details of the NFT",
+                "responses": {
+                    "200": {
+                        "description": "Returns NFT transactions"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "nft_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/nft/stats": {
+            "get": {
+                "tags": [
+                    "NFT"
+                ],
+                "description": "Get the stats of the NFT",
+                "responses": {
+                    "200": {
+                        "description": "Returns NFT stats informations"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/nft/ranks/topBasic": {
+            "get": {
+                "tags": [
+                    "NFT"
+                ],
+                "description": "Get the ranks of the Top NFT",
+                "responses": {
+                    "200": {
+                        "description": "Returns NFT ranks informations"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "timeperiod",
+                        "schema": {
+                            "type": "string",
+                            "default": "1h"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "schema": {
+                            "type": "number",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "count",
+                        "schema": {
+                            "type": "number",
+                            "default": 10
+                        }
+                    }
+                ]
+            }
+        },
+        "/nft/ranks/trendBasic": {
+            "get": {
+                "tags": [
+                    "NFT"
+                ],
+                "description": "Get the ranks of the NFT Trend",
+                "responses": {
+                    "200": {
+                        "description": "Returns NFT ranks informations"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "timeperiod",
+                        "schema": {
+                            "type": "string",
+                            "default": "1h"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "schema": {
+                            "type": "number",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "count",
+                        "schema": {
+                            "type": "number",
+                            "default": 10
+                        }
+                    }
+                ]
+            }
+        },
+        "/nft/ranks/topFull": {
+            "get": {
+                "tags": [
+                    "NFT"
+                ],
+                "description": "Get the ranks of the Top NFT",
+                "responses": {
+                    "200": {
+                        "description": "Returns NFT ranks informations"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "timeperiod",
+                        "schema": {
+                            "type": "string",
+                            "default": "1h"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "schema": {
+                            "type": "number",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "count",
+                        "schema": {
+                            "type": "number",
+                            "default": 10
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "verifiedOnly",
+                        "schema": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                ]
+            }
+        },
+        "/nft/ranks/trendFull": {
+            "get": {
+                "tags": [
+                    "NFT"
+                ],
+                "description": "Get the ranks of the NFT Trend",
+                "responses": {
+                    "200": {
+                        "description": "Returns NFT ranks informations"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "timeperiod",
+                        "schema": {
+                            "type": "string",
+                            "default": "1h"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "schema": {
+                            "type": "number",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "count",
+                        "schema": {
+                            "type": "number",
+                            "default": 10
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "verifiedOnly",
+                        "schema": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                ]
+            }
+        },
+        "/offer/lists": {
+            "get": {
+                "tags": [
+                    "Offer"
+                ],
+                "description": "Welcome to swagger-jsdoc!",
+                "responses": {
+                    "200": {
+                        "description": "Returns Offer lists."
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "status",
+                        "required": false,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "count",
+                        "required": false,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "required": false,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "type",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "detail",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "filter",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/offer/{offer_id}": {
+            "get": {
+                "tags": [
+                    "Offer"
+                ],
+                "description": "Welcome to swagger-jsdoc!",
+                "responses": {
+                    "200": {
+                        "description": "Returns Offer Details."
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "offer_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/stats/price/{cur}": {
+            "get": {
+                "tags": [
+                    "Stats"
+                ],
+                "description": "Welcome to swagger-jsdoc!",
+                "responses": {
+                    "200": {
+                        "description": "Returns total supply of xch."
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "cur",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/stats/total-supply": {
+            "get": {
+                "tags": [
+                    "Stats"
+                ],
+                "description": "Welcome to swagger-jsdoc!",
+                "responses": {
+                    "200": {
+                        "description": "Returns total supply of xch."
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        },
+        "/stats/netspace/{metrics}": {
+            "get": {
+                "tags": [
+                    "Stats"
+                ],
+                "description": "Welcome to swagger-jsdoc!",
+                "responses": {
+                    "200": {
+                        "description": "Returns total supply of xch."
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "metrics",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "authkey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "schema": {
+                            "type": "float",
+                            "default": "0.1.0"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "network",
+                        "schema": {
+                            "type": "string",
+                            "default": "mainnet"
+                        }
+                    }
+                ]
+            }
+        }
     },
-    "customOptions": {}
+    "components": {},
+    "tags": []
 }
